@@ -23,7 +23,5 @@ setup(
     author='Veedhi',
     author_email='bhanushaliveedhi@gmail.com',
     packages=find_packages(),
-    install_requires=get_requirements('requirements.txt'),
-    python_requires='>=3.9,<3.10',
-    setup_requires=['numpy>=1.19.5,<1.22.0'],
+    install_requires=get_requirements('requirements.txt')
 )
