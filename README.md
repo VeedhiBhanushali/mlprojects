@@ -136,4 +136,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📧 Contact
 
-For any queries or suggestions, please reach out to [your-email@example.com]
+For any queries or suggestions, please reach out to [bhanushaliveedhi@gmail.com]
