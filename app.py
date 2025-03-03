@@ -1,6 +1,9 @@
 from flask import Flask,request,render_template
 import numpy as np
 import pandas as pd
+import os
+import logging
+from logging.handlers import RotatingFileHandler
 
 from sklearn.preprocessing import StandardScaler
 from src.pipelines.predict_pipeline import CustomData,PredictPipeline
@@ -41,5 +44,23 @@ def predict_datapoint():
         return render_template('home.html',results=results[0])
     
 
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_error(error):
+    return render_template('500.html'), 500
+
 if __name__=="__main__":
-    app.run(host="0.0.0.0")        
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
+if not app.debug:
+    file_handler = RotatingFileHandler('app.log', maxBytes=10240, backupCount=10)
+    file_handler.setFormatter(logging.Formatter(
+        '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'
+    ))
+    file_handler.setLevel(logging.INFO)
+    app.logger.addHandler(file_handler)
+    app.logger.setLevel(logging.INFO)
+    app.logger.info('Student Performance Predictor startup')        
