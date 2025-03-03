@@ -11,8 +11,6 @@ dill>=0.3.5
 joblib>=1.1.0
 catboost>=1.0.0
 feature-engine>=1.0.2
-
-# Core Flask dependencies
 Flask-SQLAlchemy==2.5.1
 Jinja2==3.0.1
 MarkupSafe==2.0.1

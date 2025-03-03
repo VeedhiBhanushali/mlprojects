@@ -5,8 +5,16 @@ services:
     buildCommand: |
       pip install --upgrade pip &&
       pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn wsgi:app --timeout 120 --workers 2 --threads 2
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.7
-    env: python 
+      - key: GUNICORN_TIMEOUT
+        value: 120
+    env: python
+    healthCheckPath: /
+    autoDeploy: false
+    disk:
+      name: tmp
+      mountPath: /tmp
+      sizeGB: 1 
