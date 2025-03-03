@@ -57,7 +57,7 @@ After evaluating multiple models, the following R2 scores were achieved:
 
 1. Clone the repository
 git clone
-https://github.com/veedhibhanushali/student-performance-predictor.git
+https://github.com/VeedhiBhanushali/student-performance-predictor.git
 
 2. Create a virtual environment
 ```bash

@@ -1,18 +1,18 @@
+# Core dependencies with pre-built wheels
+wheel==0.38.4
+setuptools>=41.0.0
+numpy>=1.19.5,<1.22.0  # Use an older version that has pre-built wheels
+pandas>=1.3.0,<1.4.0
+scikit-learn==0.24.2
 Flask==2.0.1
 Werkzeug==2.0.3
 gunicorn==20.1.0
-numpy==1.21.0
-pandas==1.3.0
-scikit-learn==0.24.2
-xgboost==1.4.2
 dill==0.3.5
 joblib==1.1.0
 
-# Core dependencies only - comment out unused ones
-# matplotlib==3.4.3
-# seaborn==0.11.2
-catboost==1.0.0
-# feature-engine==1.0.2
+# ML libraries
+xgboost==1.4.2
+catboost==0.24.4  # Use a specific older version
 
 # Core Flask dependencies
 Flask-SQLAlchemy==2.5.1
