@@ -4,9 +4,19 @@ services:
     runtime: python
     buildCommand: |
       pip install --upgrade pip &&
-      pip install -r requirements.txt
-    startCommand: gunicorn app:app
+      pip install --no-cache-dir -r requirements.txt
+    startCommand: gunicorn app:app --timeout 120
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.7
-    env: python 
+      - key: PYTHONUNBUFFERED
+        value: "true"
+      - key: MALLOC_TRIM_THRESHOLD_
+        value: "65536"
+    plan: free
+    env: python
+    healthCheckPath: /
+    disk:
+      name: tmp
+      mountPath: /tmp
+      sizeGB: 1 

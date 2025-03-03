@@ -175,3 +175,5 @@ venv/
 .env
 *.pkl
 artifacts/
+logs/
+*.log

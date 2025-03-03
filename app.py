@@ -49,9 +49,14 @@ def not_found_error(error):
 def internal_error(error):
     return render_template('500.html'), 500
 
-if __name__=="__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+# Add this route for health checks
+@app.route('/health')
+def health():
+    return {'status': 'healthy'}, 200
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port, debug=False)
 
 if not app.debug:
     file_handler = RotatingFileHandler('app.log', maxBytes=10240, backupCount=10)
