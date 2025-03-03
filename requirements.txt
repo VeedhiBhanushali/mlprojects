@@ -7,6 +7,17 @@ scikit-learn>=0.24.2
 xgboost>=1.4.2
 matplotlib>=3.4.3
 seaborn>=0.11.2
+dill>=0.3.5
+joblib>=1.1.0
+catboost>=1.0.0
+feature-engine>=1.0.2
+
+# Core Flask dependencies
+Flask-SQLAlchemy==2.5.1
+Jinja2==3.0.1
+MarkupSafe==2.0.1
+itsdangerous==2.0.1
+click==8.0.1
 
 # Optional: Pin all versions for better stability
 # Flask-SQLAlchemy==2.5.1

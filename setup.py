@@ -1,7 +1,8 @@
-from setuptools import find_packages,setup
+from setuptools import find_packages, setup
 from typing import List
 
 HYPEN_E_DOT='-e .'
+
 def get_requirements(file_path:str)->List[str]:
     '''
     this function will return the list of requirements
@@ -17,11 +18,10 @@ def get_requirements(file_path:str)->List[str]:
     return requirements
 
 setup(
-name='mlprojects',
-version='0.0.1',
-author='Veedhi Bhanushali',
-author_email='bhanushaliveedhi@gmail.com',
-packages=find_packages(),
-install_requires=get_requirements('requirements.txt')
-
+    name='student-performance-predictor',
+    version='0.0.1',
+    author='Veedhi',
+    author_email='bhanushaliveedhi@gmail.com',
+    packages=find_packages(),
+    install_requires=get_requirements('requirements.txt')
 )
